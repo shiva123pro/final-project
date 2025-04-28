@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Flask API Fetch</title>
+</head>
+<body>
+    <h1>Student List</h1>
+    <pre id="output">Loading...</pre>
+
+    <script>
+    fetch('https://18.221.218.55/students/all')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+    })
+    .catch(error => {
+        document.getElementById('output').textContent = "Error: " + error;
+    });
+    </script>
+</body>
+</html>
+
