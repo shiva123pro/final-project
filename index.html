@@ -1,14 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student List</title>
+</head>
+<body>
+<h1>Student List</h1>
+<ul id="studentList"></ul>
 <script>
-    fetch('https://18.221.218.55/students/all')
-      .then(response => response.json())
-      .then(data => {
-        const list = document.getElementById('studentList');
-        data.forEach(student => {
-          const li = document.createElement('li');
-          li.textContent = `${student.first_name} ${student.last_name}`;
-          list.appendChild(li);
-        });
-      })
-      .catch(error => console.error('Error:', error));
-    </script>
+fetch('https://18.221.218.55/students/all')
+  .then(response => response.json())
+  .then(data => {
+    const list = document.getElementById('studentList');
+    data.forEach(student => {
+      const li = document.createElement('li');
+      li.textContent = `${student.first_name} ${student.last_name}`;
+      list.appendChild(li);
+    });
+  })
+  .catch(error => console.error('Error:', error));
+</script>
+</body>
+</html>
+
     
